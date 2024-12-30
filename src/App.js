@@ -11,6 +11,13 @@ const [ phoneNumber , setphoneNumber] = useState("")
 const [ email , setemail] = useState("")
 const [ message , setmessage ] = useState("")
 
+
+function  submitForm(e) {
+e.preventDefault();
+
+}
+
+
   return (
 
     <div className="App" >
@@ -18,7 +25,7 @@ const [ message , setmessage ] = useState("")
       <p> Thank you for reaching out! You just need to fill out the form below and then we'll get in touch  </p>
 
       <form >
-        <div row >
+        <div className='row' >
         <label htmlFor="name">name</label>
         <input type="text"  name='name' id='name'  value={name} 
         onChange={(e)=> {
@@ -35,7 +42,8 @@ const [ message , setmessage ] = useState("")
         />
         </div>
 
-        <div row >
+
+        <div className='row' >
         <label htmlFor="phoneNumber">phone number</label>
         <input type="number" id='phoneNumber' name='phoneNumber'  value={phoneNumber}
         onChange={(e)=>{
@@ -53,21 +61,35 @@ const [ message , setmessage ] = useState("")
         </div>
 
 
+
       <label htmlFor="message">message</label>
       <textarea  value={message} onChange={(e)=>{
         setmessage(e.target.value)
       }}  name="message" id="message"   ></textarea>
-      
 
 
 
-
-
-
-
-
-
+      <button onClick={
+        (e) => {
+          submitForm(e)
+        }
+      }>
+        Envoyer 
+      </button>
       </form>
+      <div className='infos'>
+        <p>Thank you for your message , now fill the following fields with your personal infos to get the chance to win an IPhone 15 Pro Max </p>
+        <form>
+         <label htmlFor="nb of kids"></label>
+         
+
+
+
+
+
+
+        </form>
+      </div>
 
       
     </div>
